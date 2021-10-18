@@ -11,6 +11,9 @@
 		F20B93A0271A440400E849A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20B939F271A440400E849A3 /* ContentView.swift */; };
 		F20B93A2271A440700E849A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20B93A1271A440700E849A3 /* Assets.xcassets */; };
 		F20B93A5271A440700E849A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20B93A4271A440700E849A3 /* Preview Assets.xcassets */; };
+		F2D6188E271DADD80069988F /* GoogleService-Info-Dev.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D6188D271DADD80069988F /* GoogleService-Info-Dev.plist */; };
+		F2D61891271DAE6D0069988F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F2D61890271DAE6D0069988F /* FirebaseMessaging */; };
+		F2D61895271DB6530069988F /* GoogleService-Info-Prod.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2D61894271DB6530069988F /* GoogleService-Info-Prod.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		F20B939F271A440400E849A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F20B93A1271A440700E849A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F20B93A4271A440700E849A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2D6188D271DADD80069988F /* GoogleService-Info-Dev.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Dev.plist"; sourceTree = "<group>"; };
+		F2D61892271DAE940069988F /* Dev_Prod_tutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dev_Prod_tutorial.entitlements; sourceTree = "<group>"; };
+		F2D61894271DB6530069988F /* GoogleService-Info-Prod.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-Prod.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D61891271DAE6D0069988F /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +58,11 @@
 		F20B939C271A440400E849A3 /* Dev_Prod_tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F2D61892271DAE940069988F /* Dev_Prod_tutorial.entitlements */,
 				F20B939D271A440400E849A3 /* Dev_Prod_tutorialApp.swift */,
 				F20B939F271A440400E849A3 /* ContentView.swift */,
 				F20B93A1271A440700E849A3 /* Assets.xcassets */,
+				F2D61893271DB5680069988F /* Firebase */,
 				F20B93A3271A440700E849A3 /* Preview Content */,
 			);
 			path = Dev_Prod_tutorial;
@@ -67,6 +76,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F2D61893271DB5680069988F /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F2D61894271DB6530069988F /* GoogleService-Info-Prod.plist */,
+				F2D6188D271DADD80069988F /* GoogleService-Info-Dev.plist */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +95,16 @@
 				F20B9396271A440400E849A3 /* Sources */,
 				F20B9397271A440400E849A3 /* Frameworks */,
 				F20B9398271A440400E849A3 /* Resources */,
+				F2D61896271DB6C30069988F /* Firebase info plist */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Dev_Prod_tutorial;
+			packageProductDependencies = (
+				F2D61890271DAE6D0069988F /* FirebaseMessaging */,
+			);
 			productName = Dev_Prod_tutorial;
 			productReference = F20B939A271A440400E849A3 /* Dev_Prod_tutorial.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +133,9 @@
 				Base,
 			);
 			mainGroup = F20B9391271A440400E849A3;
+			packageReferences = (
+				F2D6188F271DAE6D0069988F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F20B939B271A440400E849A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,10 +152,33 @@
 			files = (
 				F20B93A5271A440700E849A3 /* Preview Assets.xcassets in Resources */,
 				F20B93A2271A440700E849A3 /* Assets.xcassets in Resources */,
+				F2D6188E271DADD80069988F /* GoogleService-Info-Dev.plist in Resources */,
+				F2D61895271DB6530069988F /* GoogleService-Info-Prod.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2D61896271DB6C30069988F /* Firebase info plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Firebase info plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#파이어베이스 인포 리스트 올리기 개발, 운영 \nPATH_TO_GOOGLE_PLISTS=\"${PROJECT_DIR}/${PRODUCT_NAME}/Firebase\"\n\ncase \"${CONFIGURATION}\" in\n  \"Debug\" )\ncp -r \"$SRCROOT/${PRODUCT_NAME}/Firebase/GoogleService-Info-Dev.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n  \"Release\" )\ncp -r \"$SRCROOT/${PRODUCT_NAME}/Firebase/GoogleService-Info-Prod.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n*)\n;;\nesac\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F20B9396271A440400E849A3 /* Sources */ = {
@@ -267,6 +315,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.Dev;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = "-dev";
+				CODE_SIGN_ENTITLEMENTS = Dev_Prod_tutorial/Dev_Prod_tutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dev_Prod_tutorial/Preview Content\"";
@@ -299,6 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BUNDLE_ID_SUFFIX = "";
+				CODE_SIGN_ENTITLEMENTS = Dev_Prod_tutorial/Dev_Prod_tutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dev_Prod_tutorial/Preview Content\"";
@@ -347,6 +397,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2D6188F271DAE6D0069988F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2D61890271DAE6D0069988F /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2D6188F271DAE6D0069988F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F20B9392271A440400E849A3 /* Project object */;
 }

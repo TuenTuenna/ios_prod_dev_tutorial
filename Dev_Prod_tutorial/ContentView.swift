@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var welcomeTitle: String = ""
     
     var body: some View {
+        
         Text(welcomeTitle)
             .font(.largeTitle)
             .fontWeight(.bold)
